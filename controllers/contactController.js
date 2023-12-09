@@ -18,6 +18,7 @@ class ContactController {
         res.status(400).json({ 'status':false, error: "All fields are mandatory" });
     } else {
       const postContact = await getContactModel.create({name, email, phone}); // Insert operation
+      console.log('Data added succesfully');
       res.status(200).json({ 'status':true, data: postContact , message: "Insert Successfully"});
     }
   }
